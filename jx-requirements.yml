@@ -3,16 +3,20 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/baloise-incubator/jenkins-x-boot-config
 cluster:
+  clusterName: jx-cluster
+  environmentGitOwner: baloise-incubator
+  environmentGitPublic: true
   gitKind: github
   gitName: github
   gitServer: https://github.com
   namespace: jx
   provider: openshift
+  registry: docker-registry.default.svc:5000
 environments:
 - ingress:
-    domain: ""
+    domain: 172.29.110.190.nip.io
     externalDNS: false
-    namespaceSubDomain: ""
+    namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
@@ -38,7 +42,7 @@ environments:
   key: production
 gitops: true
 ingress:
-  domain: ""
+  domain: 172.29.110.190.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
@@ -46,6 +50,7 @@ ingress:
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
   backup:
@@ -63,6 +68,6 @@ storage:
 vault: {}
 velero: {}
 versionStream:
-  ref: master
+  ref: v1.0.187
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow

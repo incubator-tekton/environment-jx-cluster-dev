@@ -1,0 +1,14 @@
+adminUser:
+  password: local:jx-cluster/adminUser:password
+  username: admin
+docker:
+  password: local:jx-cluster/docker:password
+  url: https://cloud.docker.com/u/tabletennistournament/repository/docker/
+  username: joachimprinzbach
+enableDocker: true
+pipelineUser:
+  email: joachim.prinzbach@gmail.com
+  token: local:jx-cluster/pipelineUser:token
+  username: ttt-travis-bot
+prow:
+  hmacToken: local:jx-cluster/prow:hmacToken
